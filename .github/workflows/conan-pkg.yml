@@ -29,5 +29,5 @@ jobs:
           BUILD_TYPE: ${{ matrix.config.buildtype }}
         run: |
           conan remote add fuel https://artifactory.anotherfoxguy.com/artifactory/api/conan/fuel-scm
-          conan install . -pr ./VS-2019-%BUILD_TYPE% -b missing
+          conan install . -pr ./VS-2022-%BUILD_TYPE% -b missing
           conan upload qt/6.2.1 -r fuel --all -f
