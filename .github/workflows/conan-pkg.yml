@@ -29,6 +29,7 @@ jobs:
           CONAN_LOGIN_USERNAME: ${{ secrets.CONAN_LOGIN_USERNAME }}
           CONAN_PASSWORD: ${{ secrets.CONAN_PASSWORD }}
           BUILD_TYPE: ${{ matrix.config.buildtype }}
+          CONAN_SYSREQUIRES_MODE: enabled
         run: |
           conan remote add fuel https://artifactory.anotherfoxguy.com/artifactory/api/conan/fuel-scm
           conan install . -b missing -s build_type=$BUILD_TYPE
